@@ -1,0 +1,7 @@
+Appium-Python-Client>=4.0
+selenium>=4.21
+pytest>=8.2
+pytest-html>=4.1
+pytest-rerunfailures>=14.0
+pytest-xdist>=3.6
+python-dotenv>=1.0

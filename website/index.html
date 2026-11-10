@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Goutham Kolla | Mobile App QA Engineer (iOS & Android)</title>
+  <meta name="description" content="Goutham Kolla - Mobile QA & Test Automation Engineer. Manual, exploratory and automated testing for Android, iOS, Flutter and React Native apps." />
+  <meta name="theme-color" content="#0b0f17" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Goutham Kolla | Mobile App QA Engineer" />
+  <meta property="og:description" content="Manual & automated testing for Android, iOS, Flutter and React Native. Appium, Maestro, real-device and cloud coverage." />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2322d3a6'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%230b0f17'>GK</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand"><span class="avatar avatar-sm" data-bind="initials">GK</span><span data-bind="name">Goutham Kolla</span></a>
+      <nav class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#experience">Experience</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#project">Framework</a>
+        <a href="#contact" class="btn btn-sm">Hire me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot"></span><span data-bind="availability">Available for freelance projects</span></p>
+          <h1><span data-bind="name">Goutham Kolla</span></h1>
+          <p class="headline" data-bind="headline">Mobile App QA Engineer | iOS & Android Testing</p>
+          <p class="lead" data-bind="tagline">I help teams ship reliable, high-performing, bug-free mobile apps with seamless user experiences.</p>
+          <ul class="chips" id="platforms"></ul>
+          <div class="cta-row">
+            <a class="btn" data-link="freelancer" href="https://www.freelancer.com/u/gouthamk99" target="_blank" rel="noopener">Hire me on Freelancer</a>
+            <a class="btn btn-ghost" data-link="linkedin" href="https://www.linkedin.com/in/goutham-kolla/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-ghost" data-link="github" href="https://github.com/goutham909" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <p class="meta"><span data-bind="location">Hyderabad, India</span></p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="run-line pass"><span>PASS</span> test_valid_login_lands_on_catalog</div>
+              <div class="run-line pass"><span>PASS</span> test_invalid_login_is_rejected[locked-out]</div>
+              <div class="run-line pass"><span>PASS</span> test_cart_badge_tracks_quantity</div>
+              <div class="run-line pass"><span>PASS</span> test_end_to_end_purchase</div>
+              <div class="run-line fail"><span>BUG</span> duplicate order on slow 3G</div>
+              <div class="run-summary">8 passed, 1 defect logged with video + logs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <ul class="stats" id="stats"></ul>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2>About</h2>
+        <div id="about-text" class="prose"></div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section alt">
+      <div class="container">
+        <h2>Core capabilities</h2>
+        <div class="grid cards" id="capability-list"></div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container narrow">
+        <h2>Experience</h2>
+        <ol class="timeline" id="experience-list"></ol>
+        <div class="edu" id="education"></div>
+      </div>
+    </section>
+
+    <section id="work" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Selected work</h2>
+            <p class="lead">Client QA on Freelancer, Flutter app clones on GitHub, and products you can open. Every card jumps straight to the project or my profile.</p>
+          </div>
+          <div class="work-hubs">
+            <a class="hub-link" data-link="freelancer" href="https://www.freelancer.com/u/gouthamk99" target="_blank" rel="noopener">Freelancer profile <span aria-hidden="true">↗</span></a>
+            <a class="hub-link" data-link="github" href="https://github.com/goutham909" target="_blank" rel="noopener">GitHub profile <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="filters" id="work-filters" role="tablist" aria-label="Filter work">
+          <button type="button" class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="filter" data-filter="client" role="tab" aria-selected="false">Client QA</button>
+          <button type="button" class="filter" data-filter="clone" role="tab" aria-selected="false">App clones</button>
+          <button type="button" class="filter" data-filter="build" role="tab" aria-selected="false">Builds</button>
+        </div>
+
+        <div class="work-grid" id="work-grid"></div>
+        <p class="work-empty" id="work-empty" hidden>No projects in this filter.</p>
+      </div>
+    </section>
+
+    <section id="reviews" class="section">
+      <div class="container">
+        <h2>What clients say</h2>
+        <div class="grid two" id="testimonial-list"></div>
+      </div>
+    </section>
+
+    <section id="project" class="section alt">
+      <div class="container">
+        <h2>Featured project: Mobile automation framework</h2>
+        <p class="lead">A production-style Appium + pytest framework for the Sauce Labs demo shopping app, covering Android and iOS, local devices and the cloud, with manual test artifacts and CI.</p>
+        <div id="ci-badge" class="badge-row"></div>
+
+        <div class="arch">
+          <div class="arch-node">tests/<small>pytest journeys</small></div>
+          <div class="arch-arrow">&rarr;</div>
+          <div class="arch-node">pages/<small>Page Object Model</small></div>
+          <div class="arch-arrow">&rarr;</div>
+          <div class="arch-node">utils/<small>explicit waits + W3C gestures</small></div>
+          <div class="arch-arrow">&rarr;</div>
+          <div class="arch-node">driver_factory<small>capabilities by env</small></div>
+          <div class="arch-arrow">&rarr;</div>
+          <div class="arch-node accent">Appium<small>emulator / real device / Sauce Labs</small></div>
+        </div>
+
+        <div class="grid two project-detail">
+          <div>
+            <h3>Highlights</h3>
+            <ul class="checks">
+              <li>Accessibility-ID locators first; no brittle XPath and no <code>time.sleep()</code></li>
+              <li>One codebase for Android (UiAutomator2) and iOS (XCUITest)</li>
+              <li>Automatic screenshot + UI hierarchy captured on every failure, embedded in the HTML report</li>
+              <li>GitHub Actions: lint, Android emulator smoke on every push, nightly regression, on-demand Sauce Labs runs</li>
+              <li>Manual artifacts: test plan, device matrix, traceability, BDD interrupt and network scenarios, bug reports</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Test reads like a user journey</h3>
+<pre class="code"><code><span class="k">def</span> <span class="f">test_end_to_end_purchase</span>(catalog):
+    catalog.open_product(<span class="s">"Sauce Labs Backpack"</span>).add_to_cart()
+    <span class="k">assert</span> catalog.cart_count() == <span class="n">1</span>
+
+    checkout = (
+        catalog.open_cart()
+        .proceed_to_checkout()
+        .fill_shipping(ADDRESS)
+        .to_payment()
+        .fill_payment(CARD)
+        .review_order()
+        .place_order()
+    )
+    <span class="k">assert</span> checkout.is_order_complete()</code></pre>
+          </div>
+        </div>
+
+        <h3 class="sub">Deliverables in the repository</h3>
+        <div class="grid cards" id="artifact-list"></div>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="container">
+        <h2>Tools I work with</h2>
+        <ul class="chips large" id="tool-list"></ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container narrow center">
+        <h2>Ready for a release you can trust?</h2>
+        <p class="lead">Tell me about your app, platforms and timeline. I'll propose a test plan with clear coverage and deliverables.</p>
+        <div class="cta-row center">
+          <a class="btn" data-link="freelancer" href="https://www.freelancer.com/u/gouthamk99" target="_blank" rel="noopener">Hire me on Freelancer</a>
+          <a class="btn btn-ghost" data-link="linkedin" href="https://www.linkedin.com/in/goutham-kolla/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          <a class="btn btn-ghost" data-link="github" href="https://github.com/goutham909" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year">2026</span> <span data-bind="name">Goutham Kolla</span></span>
+      <span>Mobile QA &amp; Test Automation</span>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

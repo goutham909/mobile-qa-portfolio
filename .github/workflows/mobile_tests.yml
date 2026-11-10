@@ -1,0 +1,145 @@
+name: Mobile Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "30 20 * * *" # nightly regression, 02:00 IST
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Where to run the suite
+        type: choice
+        options: [emulator, saucelabs]
+        default: emulator
+      platform:
+        description: Platform (Sauce Labs runs only)
+        type: choice
+        options: [android, ios]
+        default: android
+      marker:
+        description: pytest marker expression
+        type: string
+        default: smoke
+
+concurrency:
+  group: mobile-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.12"
+  APK_URL: https://github.com/saucelabs/my-demo-app-rn/releases/download/v1.3.0/Android-MyDemoAppRN.1.3.0.build-244.apk
+
+jobs:
+  static-checks:
+    name: Lint and collect
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install -r requirements.txt ruff
+      - run: ruff check .
+      - run: pytest --collect-only -q
+
+  android-emulator:
+    name: Android emulator (${{ github.event_name == 'schedule' && 'regression' || inputs.marker || 'smoke' }})
+    needs: static-checks
+    if: github.event_name != 'workflow_dispatch' || inputs.target == 'emulator'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PLATFORM: android
+      RUN_ON: local
+      DEVICE_NAME: emulator-5554
+      APP_PATH: ${{ github.workspace }}/apps/my-demo-app.apk
+      MARKER: ${{ github.event_name == 'schedule' && 'smoke or regression' || inputs.marker || 'smoke' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Appium 2 + UiAutomator2
+        run: |
+          npm install -g appium
+          appium driver install uiautomator2
+
+      - name: Download app under test
+        run: |
+          mkdir -p apps
+          curl -fsSL -o "$APP_PATH" "$APK_URL"
+
+      - name: Start Appium server
+        run: |
+          nohup appium --address 127.0.0.1 --port 4723 --log-timestamp > appium.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:4723/status && exit 0; sleep 1; done
+          echo "Appium did not start" && cat appium.log && exit 1
+
+      - name: Run tests on emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot
+          script: python -m pytest -m "$MARKER" --reruns 1 --reruns-delay 2
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-emulator-report
+          path: |
+            reports/
+            appium.log
+          retention-days: 14
+
+  saucelabs:
+    name: Sauce Labs (${{ inputs.platform }})
+    needs: static-checks
+    if: github.event_name == 'workflow_dispatch' && inputs.target == 'saucelabs'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      RUN_ON: saucelabs
+      PLATFORM: ${{ inputs.platform }}
+      SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+      SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+      SAUCE_REGION: ${{ vars.SAUCE_REGION || 'eu-central-1' }}
+      DEVICE_NAME: ${{ inputs.platform == 'android' && 'Google Pixel.*' || 'iPhone.*' }}
+      # Upload the build to Sauce Labs App Storage first, then reference it by file name.
+      APP_PATH: ${{ inputs.platform == 'android' && vars.SAUCE_ANDROID_APP || vars.SAUCE_IOS_APP }}
+      BUILD_NAME: gh-${{ github.run_number }}-${{ inputs.platform }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -m "${{ inputs.marker }}" -n 2 --reruns 1
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: saucelabs-${{ inputs.platform }}-report
+          path: reports/
+          retention-days: 14

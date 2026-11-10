@@ -1,0 +1,199 @@
+{
+  "name": "Goutham Kolla",
+  "initials": "GK",
+  "headline": "Mobile App QA Engineer | iOS & Android Testing",
+  "location": "Hyderabad, India",
+  "availability": "Available for freelance projects",
+  "tagline": "I help teams ship reliable, high-performing, bug-free mobile apps with seamless user experiences.",
+  "about": [
+    "Experienced Mobile Quality Assurance (QA) Engineer specializing in comprehensive manual and automated testing for Android, iOS, Flutter, and React Native applications. I help teams ship reliable, high-performing, bug-free apps with seamless user experiences.",
+    "Dedicated to ensuring release readiness and delivering efficient, well-structured QA solutions."
+  ],
+  "platforms": ["Android", "iOS", "Flutter", "React Native"],
+  "links": {
+    "freelancer": "https://www.freelancer.com/u/gouthamk99",
+    "linkedin": "https://www.linkedin.com/in/goutham-kolla/",
+    "github": "https://github.com/goutham909"
+  },
+  "repoUrl": "https://github.com/goutham909/mobile-qa-portfolio",
+  "stats": [
+    { "value": "5.0", "label": "Client rating" },
+    { "value": "100%", "label": "On time" },
+    { "value": "100%", "label": "On budget" },
+    { "value": "100%", "label": "Repeat hire rate" }
+  ],
+  "capabilities": [
+    {
+      "title": "Manual & Exploratory Testing",
+      "description": "End-to-end user journey validation, edge-case coverage, UI/UX consistency, and BDD/natural language test case design."
+    },
+    {
+      "title": "Mobile Test Automation",
+      "description": "Automated script creation, execution, and self-healing test flows to streamline regression cycles."
+    },
+    {
+      "title": "Multi-Device & Cross-Role Testing",
+      "description": "Comprehensive validation across various Android/iOS screen resolutions and multi-user interactions (e.g., Buyer/Seller, Driver/Rider)."
+    },
+    {
+      "title": "Performance & Signal Monitoring",
+      "description": "Network latency tracking, app resource usage, and basic security vulnerability checks."
+    },
+    {
+      "title": "Detailed Bug Reporting",
+      "description": "Clear steps to reproduce, video recordings, screenshots, and system logs."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Mobile QA & Test Automation Engineer",
+      "company": "QApilot",
+      "companyUrl": "https://qapilot.io",
+      "period": "Apr 2026 - Present",
+      "location": "Hyderabad, India",
+      "bullets": [
+        "Designed end-to-end manual and automated test suites for UI/UX, edge cases, and BDD flows.",
+        "Built self-healing test automation scripts to streamline regression cycles.",
+        "Conducted multi-device & dual-role testing (e.g., Buyer/Seller, Driver/Rider).",
+        "Integrated QA into CI/CD pipelines and monitored performance, latency, and logs for bug reporting."
+      ]
+    },
+    {
+      "role": "DevOps Intern",
+      "company": "IIT Hyderabad",
+      "companyUrl": "",
+      "period": "May 2025 - Nov 2025",
+      "location": "Hyderabad, India",
+      "bullets": []
+    }
+  ],
+  "education": {
+    "degree": "B.Tech, Artificial Intelligence and Data Science",
+    "period": "2021 - 2025"
+  },
+  "projects": [
+    {
+      "id": "card-game-qa",
+      "title": "Mobile Card Game QA - End-to-End",
+      "category": "client",
+      "badge": "Freelancer · Client work",
+      "summary": "Manual, automation and multi-user QA for a real-time card game on iOS and Android. Found network desyncs and animation glitches; built Maestro/Appium lobby and regression flows.",
+      "tags": ["iOS", "Android", "Appium", "Maestro", "BrowserStack", "LambdaTest", "Jira"],
+      "links": [
+        { "label": "View Freelancer project", "url": "https://www.freelancer.com/projects/mobile-app-testing/Mobile-Engineer-for-Card-Game", "primary": true },
+        { "label": "My Freelancer profile", "url": "https://www.freelancer.com/u/gouthamk99" }
+      ]
+    },
+    {
+      "id": "mobile-app-qa",
+      "title": "Mobile App QA - Android & iOS",
+      "category": "client",
+      "badge": "Freelancer · Client work",
+      "summary": "Structured test plan, manual and automated coverage across cloud and real devices, with detailed bug reports and clear reproduction steps.",
+      "tags": ["iOS", "Android", "Manual QA", "Automation", "Cloud devices"],
+      "links": [
+        { "label": "View Freelancer project", "url": "https://www.freelancer.com/projects/mobile-app-testing/Android-iOS-Mobile-Testing", "primary": true },
+        { "label": "My Freelancer profile", "url": "https://www.freelancer.com/u/gouthamk99" }
+      ]
+    },
+    {
+      "id": "blink-clone",
+      "title": "Blink Clone",
+      "category": "clone",
+      "badge": "Flutter · App clone",
+      "summary": "Quick-commerce style Flutter UI clone with mock JSON, Riverpod and go_router. Built for local development and mobile UI automation experiments.",
+      "tags": ["Flutter", "Dart", "Riverpod", "go_router", "Android"],
+      "links": [
+        { "label": "Open on GitHub", "url": "https://github.com/goutham909/blink_clone", "primary": true },
+        { "label": "My GitHub", "url": "https://github.com/goutham909" }
+      ]
+    },
+    {
+      "id": "bookmyshow-clone",
+      "title": "BookMyShow Clone",
+      "category": "clone",
+      "badge": "Flutter · App clone",
+      "summary": "Flutter clone of a movie-ticketing experience: browse shows, seat selection flows and ticket-style screens for mobile UI and journey testing practice.",
+      "tags": ["Flutter", "Dart", "Mobile UI"],
+      "links": [
+        { "label": "Open on GitHub", "url": "https://github.com/goutham909/BookMyShow_Clone", "primary": true },
+        { "label": "My GitHub", "url": "https://github.com/goutham909" }
+      ]
+    },
+    {
+      "id": "eventstash",
+      "title": "EventStash",
+      "category": "build",
+      "badge": "Live product",
+      "summary": "Open-source event planning platform with email integration, secure auth and attendance monitoring.",
+      "tags": ["JavaScript", "Events", "Auth"],
+      "links": [
+        { "label": "Open live site", "url": "https://eventstash.netlify.app/", "primary": true },
+        { "label": "Open on GitHub", "url": "https://github.com/goutham909/EventStash.io" }
+      ]
+    },
+    {
+      "id": "artify",
+      "title": "Artify · AI image generator",
+      "category": "build",
+      "badge": "Full-stack · AI",
+      "summary": "MERN + DALL·E generative AI platform to create, store and share AI imagery through a responsive interface.",
+      "tags": ["MERN", "OpenAI", "JavaScript"],
+      "links": [
+        { "label": "Open on GitHub", "url": "https://github.com/goutham909/Artify---Ai-image-generator", "primary": true },
+        { "label": "My GitHub", "url": "https://github.com/goutham909" }
+      ]
+    },
+    {
+      "id": "video-kg",
+      "title": "Query-based video segment retrieval",
+      "category": "build",
+      "badge": "AI · Research",
+      "summary": "Knowledge-graph video search: Whisper transcription, BERT relation extraction and Streamlit hybrid semantic retrieval.",
+      "tags": ["Python", "Whisper", "BERT", "Streamlit"],
+      "links": [
+        { "label": "Open on GitHub", "url": "https://github.com/goutham909/Query-Based-Video-Segment-Retrival-using-Knowledge-Graphs", "primary": true },
+        { "label": "My GitHub", "url": "https://github.com/goutham909" }
+      ]
+    },
+    {
+      "id": "mobile-qa-portfolio",
+      "title": "Mobile QA automation framework",
+      "category": "client",
+      "badge": "Featured · Appium + pytest",
+      "summary": "Production-style Appium framework for Sauce Labs My Demo App: POM, accessibility locators, BDD artifacts, bug reports and GitHub Actions CI for Android and iOS.",
+      "tags": ["Appium", "pytest", "Android", "iOS", "CI"],
+      "featured": true,
+      "links": [
+        { "label": "Open on GitHub", "url": "https://github.com/goutham909/mobile-qa-portfolio", "primary": true },
+        { "label": "Jump to framework", "url": "#project" }
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "He ran a thorough manual and automated QA pass for our mobile card game across iOS and Android using BrowserStack and LambdaTest. He uncovered critical edge-case network desyncs and animation glitches that our internal team missed, providing narrated video evidence and precise logs in Jira. His Maestro/Appium automation scripts for lobby creation and continuous regression flows saved us hours of release prep.",
+      "author": "Harini",
+      "context": "Freelancer client - Mobile card game QA"
+    },
+    {
+      "quote": "Goutham did an exceptional job testing our mobile application across both iOS and Android. He handled both manual and automation testing thoroughly, providing a well-structured test plan, detailed bug reports with clear reproduction steps, and great cloud/real-device coverage. His communication was prompt, and he delivered everything on time with high quality.",
+      "author": "Harini",
+      "context": "Freelancer client - Mobile app QA"
+    }
+  ],
+  "tools": [
+    "Appium",
+    "Maestro",
+    "Python",
+    "pytest",
+    "BrowserStack",
+    "LambdaTest",
+    "Sauce Labs",
+    "Jira",
+    "Android Studio & ADB",
+    "Xcode & Simulators",
+    "GitHub Actions",
+    "Gherkin / BDD"
+  ]
+}
