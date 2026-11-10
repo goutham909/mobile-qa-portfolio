@@ -1,10 +1,10 @@
 const ARTIFACTS = [
-  { title: "Test plan", path: "test_artifacts/test_plan.md", text: "Scope, approach, device matrix, entry and exit criteria, risks and traceability." },
-  { title: "Sample bug reports", path: "test_artifacts/sample_bug_reports.md", text: "Severity, environment, numbered steps, expected vs actual, evidence and suggested cause." },
-  { title: "Interrupt testing (BDD)", path: "test_artifacts/bdd_features/interrupt_testing.feature", text: "Calls, SMS, backgrounding, process death, rotation, low battery, lock screen." },
-  { title: "Network throttling (BDD)", path: "test_artifacts/bdd_features/network_throttling.feature", text: "Offline, 2G/3G, Wi-Fi to cellular, latency, timeouts and double-submit protection." },
-  { title: "Page objects", path: "pages", text: "Accessibility-first locators and fluent, chainable screen APIs." },
-  { title: "CI pipeline", path: ".github/workflows/mobile_tests.yml", text: "Lint, emulator smoke, nightly regression and Sauce Labs real-device runs." },
+  { title: "Test plan", path: "test_artifacts/test_plan.md", text: "Scope, approach, device matrix, entry/exit criteria, risks and traceability." },
+  { title: "Sample bug reports", path: "test_artifacts/sample_bug_reports.md", text: "Severity, environment, numbered steps, expected vs actual, evidence." },
+  { title: "Interrupt testing (BDD)", path: "test_artifacts/bdd_features/interrupt_testing.feature", text: "Calls, SMS, backgrounding, process death, rotation, low battery." },
+  { title: "Network throttling (BDD)", path: "test_artifacts/bdd_features/network_throttling.feature", text: "Offline, 2G/3G, handoffs, latency, timeouts and double-submit protection." },
+  { title: "Page objects", path: "pages", text: "Accessibility-first locators and fluent screen APIs." },
+  { title: "CI pipeline", path: ".github/workflows/mobile_tests.yml", text: "Lint, emulator smoke, nightly regression and Sauce Labs runs." },
 ];
 
 const FILTER_LABELS = {
@@ -117,17 +117,25 @@ function render(p) {
     if (url) node.href = url;
   });
 
-  fill("platforms", p.platforms || [], (name) => el("li", "chip", name));
   fill("stats", p.stats || [], (s) => {
     const li = el("li", "stat");
     li.append(el("strong", "", s.value), el("span", "", s.label));
     return li;
   });
+
   fill("about-text", p.about || [], (para) => el("p", "", para));
+
   fill("capability-list", p.capabilities || [], (c, i) => {
-    const card = el("article", "card");
-    card.append(el("span", "card-index", String(i + 1).padStart(2, "0")), el("h3", "", c.title), el("p", "", c.description));
-    return card;
+    const item = el("li", "deliver-item");
+    item.append(
+      el("span", "idx", String(i + 1).padStart(2, "0")),
+      (() => {
+        const body = el("div");
+        body.append(el("h3", "", c.title), el("p", "", c.description));
+        return body;
+      })()
+    );
+    return item;
   });
 
   fill("experience-list", p.experience || [], (job) => {
@@ -167,11 +175,26 @@ function render(p) {
   });
 
   setupWork(p.projects || []);
-  fill("tool-list", p.tools || [], (t) => el("li", "chip", t));
+
+  fill("blog-list", p.blogs || [], (post) => {
+    const card = el("a", "blog-card");
+    card.href = post.url;
+    card.target = "_blank";
+    card.rel = "noopener";
+    card.append(
+      el("span", "blog-outlet", post.outlet || "Article"),
+      el("h3", "", post.title),
+      el("p", "", post.summary || ""),
+      el("span", "blog-cta", "Read article →")
+    );
+    return card;
+  });
+
+  fill("tool-list", p.tools || [], (t) => el("li", "", t));
 
   const repo = (p.repoUrl || "").replace(/\/$/, "");
   fill("artifact-list", ARTIFACTS, (a) => {
-    const card = el(repo ? "a" : "article", "card artifact");
+    const card = el(repo ? "a" : "article", "artifact");
     if (repo) {
       card.href = `${repo}/${a.path.includes(".") ? "blob" : "tree"}/main/${a.path}`;
       card.target = "_blank";

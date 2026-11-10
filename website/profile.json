@@ -3,11 +3,11 @@
   "initials": "GK",
   "headline": "Mobile App QA Engineer | iOS & Android Testing",
   "location": "Hyderabad, India",
-  "availability": "Available for freelance projects",
-  "tagline": "I help teams ship reliable, high-performing, bug-free mobile apps with seamless user experiences.",
+  "availability": "Open for freelance QA contracts",
+  "tagline": "You get release-ready coverage, reproducible bugs with video evidence, and automation your team can keep running after handoff.",
   "about": [
-    "Experienced Mobile Quality Assurance (QA) Engineer specializing in comprehensive manual and automated testing for Android, iOS, Flutter, and React Native applications. I help teams ship reliable, high-performing, bug-free apps with seamless user experiences.",
-    "Dedicated to ensuring release readiness and delivering efficient, well-structured QA solutions."
+    "I specialize in mobile QA for Android, iOS, Flutter, and React Native — the kind of testing that catches payment races, network edge cases, and role-switching bugs before they hit production.",
+    "Clients hire me when a release date is fixed and they need someone who can plan coverage fast, execute deeply, and hand back actionable reports — not a vague status update."
   ],
   "platforms": ["Android", "iOS", "Flutter", "React Native"],
   "links": {
@@ -24,24 +24,24 @@
   ],
   "capabilities": [
     {
-      "title": "Manual & Exploratory Testing",
-      "description": "End-to-end user journey validation, edge-case coverage, UI/UX consistency, and BDD/natural language test case design."
+      "title": "Manual & exploratory testing",
+      "description": "Full user journeys, edge cases, UI consistency, and BDD-style cases written so your team can reuse them."
     },
     {
-      "title": "Mobile Test Automation",
-      "description": "Automated script creation, execution, and self-healing test flows to streamline regression cycles."
+      "title": "Mobile automation you can keep",
+      "description": "Appium / Maestro flows for regression — stable locators, readable scripts, ready for CI."
     },
     {
-      "title": "Multi-Device & Cross-Role Testing",
-      "description": "Comprehensive validation across various Android/iOS screen resolutions and multi-user interactions (e.g., Buyer/Seller, Driver/Rider)."
+      "title": "Multi-device & dual-role coverage",
+      "description": "Real devices and cloud farms across screen sizes, plus Buyer/Seller or Driver/Rider style flows."
     },
     {
-      "title": "Performance & Signal Monitoring",
-      "description": "Network latency tracking, app resource usage, and basic security vulnerability checks."
+      "title": "Network & interrupt stress",
+      "description": "Slow 3G, offline, call interrupts, backgrounding — the failures that only show up under bad conditions."
     },
     {
-      "title": "Detailed Bug Reporting",
-      "description": "Clear steps to reproduce, video recordings, screenshots, and system logs."
+      "title": "Bug reports that get fixed",
+      "description": "Severity, steps, expected vs actual, screenshots, narrated video, and logs your engineers can trust."
     }
   ],
   "experience": [
@@ -180,6 +180,20 @@
       "quote": "Goutham did an exceptional job testing our mobile application across both iOS and Android. He handled both manual and automation testing thoroughly, providing a well-structured test plan, detailed bug reports with clear reproduction steps, and great cloud/real-device coverage. His communication was prompt, and he delivered everything on time with high quality.",
       "author": "Harini",
       "context": "Freelancer client - Mobile app QA"
+    }
+  ],
+  "blogs": [
+    {
+      "title": "The End of Scripted Testing: How We Use MCP to Drive Live Real-Device Automation",
+      "summary": "Why brittle scripted suites fall short — and how MCP-driven agents can explore live devices, adapt to UI changes, and catch the failures scripts miss.",
+      "outlet": "LinkedIn",
+      "url": "https://www.linkedin.com/pulse/end-scripted-testing-how-we-use-mcp-drive-live-automation-kolla-qoxvf/"
+    },
+    {
+      "title": "What Rebuilding Mobile Apps Taught Me About Great Product Design",
+      "summary": "Rebuilding apps from observation only — DoorDash and beyond — and how that systems thinking changes how you design, ship, and test mobile products.",
+      "outlet": "DEV Community",
+      "url": "https://dev.to/qapilot/what-rebuilding-mobile-apps-taught-me-about-great-product-design-5d5d"
     }
   ],
   "tools": [
