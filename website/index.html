@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Goutham Kolla | Mobile QA Engineer — Hire for iOS & Android</title>
   <meta name="description" content="Hire Goutham Kolla for mobile QA. Manual, exploratory and automated testing for Android, iOS, Flutter and React Native — with clear bug reports, video evidence and release confidence." />
-  <meta name="theme-color" content="#f3f5f8" />
+  <meta name="theme-color" content="#f3f5f8" id="theme-color" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Goutham Kolla | Mobile QA Engineer" />
@@ -15,7 +15,18 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230c1222'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='26' fill='%23f3f5f8'>GK</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var key = "gk-theme";
+      var stored = localStorage.getItem(key);
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var theme = stored || (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.content = theme === "dark" ? "#0b1018" : "#f3f5f8";
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,6 +43,7 @@
         <a href="#work">Work</a>
         <a href="#writing">Writing</a>
         <a href="#reviews">Reviews</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Toggle color theme"></button>
         <a href="#contact" class="btn btn-sm">Hire me</a>
       </nav>
     </div>

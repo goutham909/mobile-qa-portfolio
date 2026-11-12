@@ -224,6 +224,36 @@ function render(p) {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+const THEME_KEY = "gk-theme";
+
+function currentTheme() {
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem(THEME_KEY, theme);
+  const meta = document.getElementById("theme-color");
+  if (meta) meta.content = theme === "dark" ? "#0b1018" : "#f3f5f8";
+  const toggle = document.getElementById("theme-toggle");
+  if (toggle) {
+    const next = theme === "dark" ? "light" : "dark";
+    toggle.setAttribute("aria-label", `Switch to ${next} mode`);
+    toggle.title = `Switch to ${next} mode`;
+  }
+}
+
+function setupThemeToggle() {
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+  applyTheme(currentTheme());
+  toggle.addEventListener("click", () => {
+    applyTheme(currentTheme() === "dark" ? "light" : "dark");
+  });
+}
+
+setupThemeToggle();
+
 fetch("profile.json", { cache: "no-cache" })
   .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
   .then(render)
