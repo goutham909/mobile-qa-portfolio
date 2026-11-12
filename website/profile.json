@@ -13,8 +13,10 @@
   "links": {
     "freelancer": "https://www.freelancer.com/u/gouthamk99",
     "linkedin": "https://www.linkedin.com/in/goutham-kolla/",
-    "github": "https://github.com/goutham909"
+    "github": "https://github.com/goutham909",
+    "website": "https://goutham-kolla-portfolio.vercel.app/"
   },
+  "siteUrl": "https://goutham-kolla-portfolio.vercel.app/",
   "repoUrl": "https://github.com/goutham909/mobile-qa-portfolio",
   "stats": [
     { "value": "5.0", "label": "Client rating" },

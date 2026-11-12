@@ -169,21 +169,16 @@ In CI, add `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY` as repository secrets and `SA
 cd website && python3 -m http.server 8000   # open http://localhost:8000
 ```
 
-**Deploy free on Vercel**
-1. Push this folder to a GitHub repository.
-2. Go to [vercel.com/new](https://vercel.com/new), sign in with GitHub, and import the repository. `vercel.json` already sets `website/` as the output directory, so keep the defaults and click **Deploy**.
-3. Your site is live at `https://<project-name>.vercel.app`. Name the project `gouthamkolla` to get `gouthamkolla.vercel.app`, if that name is available.
-4. Optional: buy a domain and add it under **Project > Settings > Domains**.
+**Live site:** [https://goutham-kolla-portfolio.vercel.app/](https://goutham-kolla-portfolio.vercel.app/)
 
-The site already points artifact links and the CI badge at `https://github.com/goutham909/mobile-qa-portfolio`.
-
-Every push to `main` redeploys automatically.
+Every push to `main` redeploys automatically on Vercel. Artifact links and the CI badge point at `https://github.com/goutham909/mobile-qa-portfolio`.
 
 ## Author
 
 **Goutham Kolla**, Mobile QA & Test Automation Engineer, Hyderabad, India
 Manual, exploratory and automated testing for Android, iOS, Flutter and React Native.
 
+- Portfolio: <https://goutham-kolla-portfolio.vercel.app/>
 - Freelancer: <https://www.freelancer.com/u/gouthamk99>
 - LinkedIn: <https://www.linkedin.com/in/goutham-kolla/>
 - GitHub: <https://github.com/goutham909>
